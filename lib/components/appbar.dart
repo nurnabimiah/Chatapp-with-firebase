@@ -1,25 +1,30 @@
 import 'package:chat_app_flutter/consts/strings.dart';
 import 'package:flutter/material.dart';
 
-Widget appbar() {
+Widget appbar(GlobalKey<ScaffoldState>key) {
   return Container(
     height: 100,
     color: Colors.white,
     child: Row(
       children: [
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
+        GestureDetector(
+          onTap: (){
+            key.currentState?.openDrawer();
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(100),
+                    bottomRight: Radius.circular(100),
 
-              )),
-          height: 100,
-          width: 100,
-          child: Icon(
-            Icons.settings,
-            color: Colors.white,
+                )),
+            height: 100,
+            width: 100,
+            child: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
           ),
         ),
         Column(

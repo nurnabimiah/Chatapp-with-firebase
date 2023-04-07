@@ -2,8 +2,11 @@
 
 
 import 'package:chat_app_flutter/consts/colors.dart';
+import 'package:chat_app_flutter/screens/chat_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 Widget chatComponents(){
   return Container(
@@ -12,6 +15,9 @@ Widget chatComponents(){
         itemCount: 20,
         itemBuilder: (context,index){
           return ListTile(
+            onTap: (){
+              Get.to(()=> ChatScreen() ,transition:Transition.downToUp);
+            },
             leading:CircleAvatar(
                 backgroundColor: Colors.transparent,
                 radius: 25,

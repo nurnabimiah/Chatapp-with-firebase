@@ -5,14 +5,14 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ChatAppScreen extends StatefulWidget {
-  const ChatAppScreen({Key? key}) : super(key: key);
+class ChatAppHomeScreen extends StatefulWidget {
+  const ChatAppHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ChatAppScreen> createState() => _ChatAppScreenState();
+  State<ChatAppHomeScreen> createState() => _ChatAppHomeScreenState();
 }
 
-class _ChatAppScreenState extends State<ChatAppScreen> {
+class _ChatAppHomeScreenState extends State<ChatAppHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +33,7 @@ class _ChatAppScreenState extends State<ChatAppScreen> {
                   ),
                 )),
             Expanded(
-                flex: 1,
+                flex: 2,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -47,19 +47,17 @@ class _ChatAppScreenState extends State<ChatAppScreen> {
                     ),
                     SizedBox(height: 20,),
                     Text(slogan,style: TextStyle(fontSize: 25),)
-                    
+
                   ],
                 )),
             Expanded(
-                flex: 1,
-                child: Container(
-                  child: Column(
-                    children: [
-                      ElevatedButton(onPressed: (){
-                        Get.to(()=>VerificationScreen(),transition: Transition.downToUp);
-                      }, child: Text('Start Meassaging'))
-                    ],
-                  ),
+
+                child: Column(
+                  children: [
+                    ElevatedButton(onPressed: (){
+                      Get.to(()=>VerificationScreen(),transition: Transition.downToUp);
+                    }, child: Text('Start Meassaging'))
+                  ],
                 )),
           ],
         ),

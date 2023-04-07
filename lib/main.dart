@@ -1,5 +1,5 @@
 
-import 'package:chat_app_flutter/screens/chat_app_screen.dart';
+import 'package:chat_app_flutter/screens/chat_app_homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -22,7 +22,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData(fontFamily: "lato"),
       debugShowCheckedModeBanner: false,
-      home: ChatAppScreen(),
+      home: ChatAppHomeScreen(),
       title: appname,
     );
   }

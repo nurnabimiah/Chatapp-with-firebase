@@ -1,5 +1,6 @@
 
 import 'package:chat_app_flutter/components/appbar.dart';
+import 'package:chat_app_flutter/components/drawer.dart';
 import 'package:chat_app_flutter/components/tabbar.dart';
 import 'package:chat_app_flutter/components/tabbar_view.dart';
 import 'package:chat_app_flutter/consts/colors.dart';
@@ -10,15 +11,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final scaffolkey = GlobalKey<ScaffoldState>();
+
+
+
     return SafeArea(
+
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
+          key: scaffolkey,
+          drawer: drawer(),
           floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
           backgroundColor: bgColor,
           body: Column(
            children: [
-             appbar(),
+             appbar(scaffolkey),
              Expanded(
                child: Row(
                  children: [
